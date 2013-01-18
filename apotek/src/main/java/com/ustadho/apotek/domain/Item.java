@@ -24,7 +24,7 @@ public class Item {
     private String namaItem;
     
     @ManyToOne
-    @JoinColumn(name="id_kategori", nullable=false)
+    @JoinColumn(name="id_kategori", nullable=true)
     Kategori kategoriItem;
 
     public Kategori getKategoriItem() {
