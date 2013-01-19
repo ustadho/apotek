@@ -17,24 +17,24 @@ import javax.persistence.Id;
 public class Kategori {
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
     
     @Column(name="nama_kategori")
     private String namaKategori;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getNama_kategori() {
+    public String getNamaKategori() {
         return namaKategori;
     }
 
-    public void setNama_kategori(String nama_kategori) {
+    public void setNamaKategori(String nama_kategori) {
         this.namaKategori = nama_kategori;
     }
     

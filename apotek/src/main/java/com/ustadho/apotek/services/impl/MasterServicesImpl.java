@@ -47,5 +47,18 @@ public class MasterServicesImpl implements MasterServices{
         return kategoriDao.tampilkanSemua();
     }
 
+    @Transactional
+    public Kategori cariKategoriById(Integer idKetegoriInt) {
+        return kategoriDao.cariById(idKetegoriInt);
+    }
+
+    @Transactional
+    public Item cariItemByKode(String kode) {
+        if(kode==null){
+            return null;
+        }
+        return itemDao.cariByKode(kode);
+    }
+
     
 }

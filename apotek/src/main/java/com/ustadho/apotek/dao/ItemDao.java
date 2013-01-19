@@ -5,6 +5,7 @@
 package com.ustadho.apotek.dao;
 
 import com.ustadho.apotek.domain.Item;
+import com.ustadho.apotek.domain.Kategori;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,13 @@ public class ItemDao {
                 sessionFactory
                 .getCurrentSession()
                 .createQuery("from Item i").list();
+    }
+
+    public Item cariByKode(String kode) {
+        return (Item) sessionFactory.getCurrentSession()
+                .createQuery("select f from Item f where f.kodeItem=:x")
+                .setParameter("x", kode)
+                .uniqueResult();
+        
     }
 }

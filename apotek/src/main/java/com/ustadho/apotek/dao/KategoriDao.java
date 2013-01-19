@@ -4,6 +4,7 @@
  */
 package com.ustadho.apotek.dao;
 
+import com.ustadho.apotek.domain.Item;
 import com.ustadho.apotek.domain.Kategori;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -24,8 +25,13 @@ public class KategoriDao {
     }
     
     public List<Kategori> tampilkanSemua(){
-        return sessionFactory.getCurrentSession().createQuery("from Kategory k").list();
+        return sessionFactory.getCurrentSession().createQuery("from Kategori k").list();
         
+    }
+
+    public Kategori cariById(Integer idKategoriInt) {
+        return (Kategori) sessionFactory.getCurrentSession()
+                .get(Kategori.class, idKategoriInt);
     }
     
 }

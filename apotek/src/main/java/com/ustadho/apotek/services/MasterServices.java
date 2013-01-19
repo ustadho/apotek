@@ -18,5 +18,9 @@ public interface MasterServices {
     
     void simpan(Kategori kategori);
     List<Kategori> tampilkanSemuaKateori();
+
+    public Kategori cariKategoriById(Integer idPesertaInt);
+
+    public Item cariItemByKode(String kode);
     
 }
